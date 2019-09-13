@@ -3,7 +3,10 @@ import math
 import pandas
 
 # Function to extract basic feature statistics
-def get_feature_stats(df):
+def get_feature_stats(_df, _target):
+
+    df = _df.copy()
+    df['target'] = _target
 
     total_events = df[df.target == 1].shape[0]
     total_nonevents = df[df.target == 0].shape[0]
